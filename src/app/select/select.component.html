@@ -1,0 +1,65 @@
+<div class="container">
+  <div *ngIf="view; else loader">
+    <mat-form-field class="form-field">
+      <mat-label>Сurrency</mat-label>
+      <mat-select
+        class="select"
+        [value]="currencies[1]"
+        (selectionChange)="handleSelect1($event.value)"
+      >
+        <mat-option
+          class="option"
+          *ngFor="let currency of currencies"
+          [value]="currency"
+        >
+          {{ currency }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Amount</mat-label>
+      <input
+        matInput
+        [(ngModel)]="amount1.sum"
+        (ngModelChange)="changeHandler1()"
+        type="number"
+      />
+    </mat-form-field>
+
+    <span class="equals">=</span>
+
+    <mat-form-field class="form-field">
+      <mat-label>Сurrency</mat-label>
+      <mat-select
+        class="select"
+        [value]="currencies[0]"
+        (selectionChange)="handleSelect2($event.value)"
+      >
+        <mat-option
+          class="option"
+          *ngFor="let currency of currencies"
+          [value]="currency"
+        >
+          {{ currency }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Amount</mat-label>
+      <input
+        #input
+        data-num="2"
+        matInput
+        [(ngModel)]="amount2.sum"
+        (ngModelChange)="changeHandler2(input.dataset['num'])"
+        type="number"
+      />
+    </mat-form-field>
+  </div>
+
+  <ng-template #loader>
+    <mat-spinner diameter="25"></mat-spinner>
+  </ng-template>
+</div>
