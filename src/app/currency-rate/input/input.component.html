@@ -1,0 +1,9 @@
+<mat-form-field class="form-field">
+  <mat-label>Amount</mat-label>
+  <input
+    matInput
+    [(ngModel)]="currencyService.amount.value[num]"
+    (ngModelChange)="changeHandler()"
+    type="number"
+  />
+</mat-form-field>

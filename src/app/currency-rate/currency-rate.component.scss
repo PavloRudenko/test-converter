@@ -1,0 +1,16 @@
+@import "src/app/currency-rate/variables";
+
+.container {
+  width: calc(($form-field-width + $form-field-mr + 0.2rem) * 4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.equals {
+  margin-right: $form-field-mr;
+}
+
+.form-field:not(:last-child) {
+  margin-right: $form-field-mr;
+}

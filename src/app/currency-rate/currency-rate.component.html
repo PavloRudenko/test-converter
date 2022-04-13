@@ -1,0 +1,20 @@
+<div class="container">
+  <div *ngIf="isActive; else loader">
+    <app-select
+      [currencies]="currencies"
+      class="form-field"
+      [num]="0"
+    ></app-select>
+    <app-input class="form-field" [num]="0"></app-input>
+    <span class="equals">=</span>
+    <app-select
+      [currencies]="currencies"
+      class="form-field"
+      [num]="1"
+    ></app-select>
+    <app-input class="form-field" [num]="1"></app-input>
+  </div>
+  <ng-template #loader>
+    <mat-spinner diameter="25"></mat-spinner>
+  </ng-template>
+</div>
